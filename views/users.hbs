@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head> 
+   <style>
+      .backToSongs{
+         margin-top: 20px;
+         font-size: 16px; 
+         background-color: blue;
+         color: white; 
+         border: none; 
+         cursor: pointer;
+      }
+
+      .reset{
+         margin-top: 20px;
+         font-size: 10px; 
+         padding: 6px 10px; 
+         background-color: green;
+         color: white; 
+         border: none; 
+         cursor: pointer;
+         border-radius: 20px;
+      }
+
+      .delete{
+         margin-top: 5px;
+         font-size: 10px; 
+         padding: 6px 10px; 
+         background-color: red;
+         color: white; 
+         border: none; 
+         cursor: pointer;
+         border-radius: 20px;
+      }
+
+   </style>
+   <a href="/songs">
+    <button type="button" class="backToSongs">&#171</button>
+  </a>
+  <title> {{title}} </title>
+</head>
+<body>
+   <h1>{{title}}</h1>
+<div> 
+   {{#each userEntries}} 
+      <pre>UserID: {{this.userid}}     ||     Password: {{this.password}}     ||     Role: {{this.role}}    ||    TotalCost: ${{this.totalCost}}</a></pre> 
+   {{/each}}
+</div>
+ <form action="/reset" method="post">
+      <button class = "reset" type="submit">Reset TotalCosts</button>
+ </form>
+ <form action="/delete" method="post"> 
+      <button class = "delete" type="submit">Delete All Users</button>
+ </form>
+</body>
+</html>

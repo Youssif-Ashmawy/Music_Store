@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .song-info {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: larger;
+      font-style: italic;
+      color: blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .label {
+      font-style: normal;
+      font-weight: bold;
+      color: red;
+      margin-right: 5px;
+    }
+
+    .song-info img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+
+    span {
+      margin: 5px 0;
+    }
+
+    .price{
+      font-style: normal;
+      font-family: cursive;
+      color: black;
+      font-weight: bold;
+      background-color: yellow;
+      border-style: dashed;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+   .button button {
+    margin-top: 20px;
+    font-size: 16px; 
+    padding: 10px 20px; 
+    background-color: green;
+    color: white; 
+    border: none; 
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  </style>
+</head>
+<body>
+  <h1>{{title}}</h1>
+  
+  <div class="song-info"> 
+    <h1>{{song.id}}</h1>
+    <span><span class="label">Title:</span> {{song.title}}</span>
+    <span><span class="label">Artist:</span> {{song.artist}}</span> 
+    <span><span class="label">Genre:</span> {{song.genre}}</span>
+    <span><span class="label">Price:</span> <span class="price">${{song.price}}</span></span>
+    <span><img src="{{song.artwork}}" alt="Song Artwork"></span>
+    <form action="/update" method="post">
+    <div class = "button"> 
+        <button type="submit">Buy</button>
+    </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>{{title}}</title>
+  <style>
+    .song-id {
+      font-weight: bold;
+      color: green;
+    }
+
+    .song-title {
+      font-style: italic;
+      color: blue;
+    }
+
+   .by{
+      color: rgb(217, 144, 9);
+   }
+
+
+    .song-artist {
+      font-weight: bold;
+      font-weight: normal;
+      color: red;
+    }
+
+    .amountSpent{
+      display: flex;
+      font-size: large;
+      font-family: cursive;
+      background-color: yellow;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-style: double;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .searchbutton{
+      background-color: green;
+      color: white;
+      cursor: pointer;
+    }
+
+    .userbutton{
+      background-color: red;
+      color: white;
+      cursor: pointer;
+    }
+
+    .backtosearch{
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+    }
+
+  </style>
+
+  <a href="/users">
+    <button type="button" class="userbutton">Check Users (ADMIN ACCESS)</button>
+  </a><p></p>
+  
+  <a href="/search">
+    <button type="button" class="backtosearch">Search For Another Title</button>
+  </a><p></p>
+
+  <div class="amountSpent">
+    <label>Total Amount Spent: </label>
+    <label>${{amount}}</label>
+  </div>
+
+  <form method="get" action="/songs">
+    <label for="search">Look for a song:</label>
+    <input type="text" id="searchsong" name="title">
+    <button type="submit" class="searchbutton">Search</button>
+  </form>
+
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <div> 
+    {{#each songEntries}} 
+      <p>
+        <a href="song/{{this.id}}">
+          <span class="song-id">({{this.id}})</span>
+            <span class="song-title">{{this.title}}</span>
+            <span class="by">by</span>
+            <span class="song-artist">{{this.artist}}</span>
+        </a>
+      </p> 
+    {{/each}} 
+  </div>
+</body>
+</html>

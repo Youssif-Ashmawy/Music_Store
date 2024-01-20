@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        .signupbutton{
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+
+        .loginbutton{
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sign Up</h1>
+
+    <form action="/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="newUsername"> 
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="newPassword"> 
+
+        <button type="submit" class="signupbutton">Sign Up</button><br><br>
+    </form>
+
+    <a href="/search">
+        <button type="button" class="loginbutton">Have an Account? Login</button>
+    </a>
+</body>
+</html>
